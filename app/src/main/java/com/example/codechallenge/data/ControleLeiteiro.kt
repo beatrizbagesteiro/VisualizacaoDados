@@ -7,8 +7,8 @@ import java.util.Date
 @Entity
 data class ControleLeiteiro(
     @PrimaryKey
-    val id:Int,
-    val microchip:Int,
+    val id:String,
+    val microchip:Long,
     val numAnimal:Int,
     val nome:String,
     val dataParto:String,
@@ -19,3 +19,5 @@ data class ControleLeiteiro(
     val dataControle:String,
     val del:Int
 )
+
+

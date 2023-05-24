@@ -7,7 +7,7 @@ import java.util.Date
 @Entity
 data class ProducaoDiaria(
     @PrimaryKey
-    val id:Int,
+    val id:String,
     val totAnimal:Int,
     val primeiraOrdenha:Float,
     val segOrdenha:Float,
