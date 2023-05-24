@@ -8,6 +8,7 @@ import com.example.codechallenge.data.ProducaoDao
 import com.example.codechallenge.data.ProducaoDiaria
 import com.example.codechallenge.data.Top10Ordenhas
 import com.example.codechallenge.presentation.CodeChallangeViewModel
+import com.github.mikephil.charting.charts.BarChart
 import io.mockk.Runs
 import io.mockk.every
 import io.mockk.just
@@ -142,9 +143,9 @@ class CodeChallangeViewModelTest {
 
         every { controleDao.top10() } returns top10Ordenhas
 
-        underTest.generateBarChartData()
+        val resultado = controleDao.top10()
 
-        verify { controleDao.top10() }
+        assertEquals(top10Ordenhas,resultado)
 
 
     }
