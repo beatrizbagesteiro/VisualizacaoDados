@@ -16,10 +16,10 @@ interface ControleDao {
     fun update(controleLeiteiro: ControleLeiteiro)
     @Query("SELECT del FROM ControleLeiteiro")
     fun getDel():Int
-    @Query("SELECT numAnimal, total from ControleLeiteiro order by total desc limit 10")
+    @Query("SELECT numAnimal,total FROM ControleLeiteiro ORDER BY total DESC LIMIT 10")
     fun top10():List<Top10Ordenhas>
 
-    @Query("SELECT total FROM ControleLeiteiro")
+    @Query("SELECT SUM(total) FROM ControleLeiteiro")
     fun getTotalLitros(): Float
 
     @Query("SELECT SUM(primOrdenha) FROM ControleLeiteiro")

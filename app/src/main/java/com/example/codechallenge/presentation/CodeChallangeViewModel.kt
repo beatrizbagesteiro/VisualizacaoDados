@@ -110,26 +110,30 @@ class CodeChallangeViewModel(
     private val _barChartData = MutableLiveData<BarData>()
     val barChartData: LiveData<BarData> = _barChartData
 
-    fun generateBarChartData() {
+    fun generateBarChartData(barChartMelhores:BarChart) {
         viewModelScope.launch(dispatcher) {
-            val top10Ordenhas = controleDao.top10()
-             val numerosAnimais = top10Ordenhas.map { it.numAnimal }
-             val totaisLitros = top10Ordenhas.map { it.total }
+            val top10Data = controleDao.top10()
 
             withContext(Dispatchers.Main) {
-                val entries = mutableListOf<BarEntry>()
-
-                for (i in numerosAnimais.indices) {
-                    entries.add(BarEntry(i.toFloat(), totaisLitros[i]))
+                val entries = top10Data.mapIndexed { index, data ->
+                    BarEntry(index.toFloat(), data.total)
                 }
 
-                val barDataSetMelhores = BarDataSet(entries, "Litros")
-                val barDataMelhores = BarData(barDataSetMelhores)
+                val numerosAnimais = top10Data.map { it.numAnimal }
 
-                barDataSetMelhores.setColors(ColorTemplate.MATERIAL_COLORS, 255)
-                barDataSetMelhores.valueTextColor = Color.BLACK
+                val xAxisLabels = numerosAnimais.map { it.toString() }.toTypedArray()
+                val xAxisFormatter = IndexAxisValueFormatter(xAxisLabels)
 
-                _barChartData.postValue(barDataMelhores)
+                val xAxis = barChartMelhores.xAxis
+                xAxis.valueFormatter = xAxisFormatter
+
+
+                val dataSet = BarDataSet(entries, "Litros")
+                dataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
+                dataSet.valueTextColor = Color.BLACK
+
+                val chartData = BarData(dataSet)
+                _barChartData.postValue(chartData)
             }
         }
     }

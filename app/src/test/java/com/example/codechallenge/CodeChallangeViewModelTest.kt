@@ -77,7 +77,7 @@ class CodeChallangeViewModelTest {
     }
 
     @Test
-    fun cardViewControleGeral() {
+    fun cardViewControleGeralTest() {
         every { controleDao.getTotalLitros() } returns 10.0f
         every { controleDao.getSomaPrimOrdenha() } returns 5.0f
         every { controleDao.getSomaSegOrdenha() } returns 7.0f

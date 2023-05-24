@@ -9,6 +9,7 @@ import androidx.cardview.widget.CardView
 import com.example.codechallenge.R
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -43,22 +44,13 @@ class MainActivity : AppCompatActivity() {
         viewModel.readProdDiaria(this@MainActivity)
 
         viewModel.dadosPlanilhaControleLeiteiro.observe(this@MainActivity) { controleLeiteiroList ->
-            controleLeiteiroList.forEach {
-                viewModel.atualizarControleLeiteiro(it)
-            }
 
-            controleLeiteiroList.forEach{
-                viewModel.insertControleLeiteiro(it)
-            }
+
+
         }
         viewModel.dadosPlanilhaProdDiaria.observe(this@MainActivity){ producaoDiariaList ->
 
-            producaoDiariaList.forEach{
-                viewModel.insertProdDiaria(it)
-            }
-            producaoDiariaList.forEach{
-                viewModel.atualizarProducaoDiaria(it)
-            }
+
 
         }
 
@@ -87,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         //Grafico de barra Controle Geral
         barChartMelhores = findViewById(R.id.barChartMelhores)
 
-        viewModel.generateBarChartData()
+        viewModel.generateBarChartData(barChartMelhores)
         viewModel.barChartData.observe(this) { barData ->
             barChartMelhores.xAxis.position = XAxis.XAxisPosition.BOTTOM
             barChartMelhores.xAxis.setDrawGridLines(false)
