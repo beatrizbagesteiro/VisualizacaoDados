@@ -52,11 +52,11 @@ class CodeChallangeViewModelTest {
             del = 0
         )
 
-        every { controleDao.update(controleLeiteiro) } just Runs
+        every { controleDao.upsert(controleLeiteiro) } just Runs
 
-        underTest.atualizarControleLeiteiro(controleLeiteiro)
+        underTest.upsertControle(controleLeiteiro)
 
-        verify { controleDao.update(controleLeiteiro) }
+        verify { controleDao.upsert(controleLeiteiro) }
     }
 
     @Test
@@ -70,11 +70,11 @@ class CodeChallangeViewModelTest {
             media = 15.5f,
             data = "01/05/2022"
         )
-        every { producaoDao.update(producaoDiaria) } just Runs
+        every { producaoDao.upsert(producaoDiaria) } just Runs
 
-        underTest.atualizarProducaoDiaria(producaoDiaria)
+        underTest.upsertProdDiaria(producaoDiaria)
 
-        verify { producaoDao.update(producaoDiaria) }
+        verify { producaoDao.upsert(producaoDiaria) }
     }
 
     @Test
@@ -165,24 +165,6 @@ class CodeChallangeViewModelTest {
 
     }
 
-
-    @Test
-    fun insertProdDiaria(){
-        val producaoDiaria = ProducaoDiaria(
-            id = "1a2b3c4d",
-            totAnimal = 10,
-            primeiraOrdenha = 12.5f,
-            segOrdenha = 10.8f,
-            totLitrosDia = 23.3f,
-            media = 15.5f,
-            data = "01/05/2022"
-        )
-        every { producaoDao.insertProd(producaoDiaria) } just Runs
-
-        underTest.insertProdDiaria(producaoDiaria)
-
-        verify { producaoDao.insertProd(producaoDiaria) }
-    }
 
 
 

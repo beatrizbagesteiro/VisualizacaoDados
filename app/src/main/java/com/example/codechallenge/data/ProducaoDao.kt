@@ -6,15 +6,15 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import androidx.room.Upsert
 
 @Dao
 interface ProducaoDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertProd(producaoDiaria: ProducaoDiaria)
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    fun update(producaoDiaria: ProducaoDiaria)
+    @Upsert()
+    fun upsert(producaoDiaria: ProducaoDiaria)
+
     @Query("SELECT totAnimal FROM producaodiaria WHERE data = :selectedData")
     fun somaTotAnimais(selectedData: String): Int
 

@@ -59,29 +59,18 @@ class CodeChallangeViewModel(
         get() = _dadosPlanilhaProdDiaria
 
 
-    fun insertControleLeiteiro(controleLeiteiro: ControleLeiteiro){
-        viewModelScope.launch (dispatcher)  {
-            controleDao.insertControle(controleLeiteiro)
-        }
-    }
-
-
-    fun atualizarControleLeiteiro(controleLeiteiro: ControleLeiteiro) {
+    fun upsertProdDiaria(producaoDiaria: ProducaoDiaria){
         viewModelScope.launch(dispatcher) {
-            controleDao.update(controleLeiteiro)
+            producaoDao.upsert(producaoDiaria)
         }
     }
 
-    fun insertProdDiaria(producaoDiaria: ProducaoDiaria){
-        viewModelScope.launch(dispatcher){
-            producaoDao.insertProd(producaoDiaria)
+    fun upsertControle(controleLeiteiro: ControleLeiteiro){
+        viewModelScope.launch (dispatcher) {
+            controleDao.upsert(controleLeiteiro)
         }
     }
-    fun atualizarProducaoDiaria(producaoDiaria: ProducaoDiaria) {
-        viewModelScope.launch(dispatcher) {
-            producaoDao.update(producaoDiaria)
-        }
-    }
+
 
     //Atualização CardView ControleLeiteiro
     private val _dadosCardViewControleGeral = MutableLiveData<List<DadosCardViewGeral>>()
@@ -275,7 +264,7 @@ class CodeChallangeViewModel(
 
     fun addBancoDadosControle(controleLeiteiroList: List<ControleLeiteiro>) {
         controleLeiteiroList.forEach { controleLeiteiro ->
-            controleDao.insertControle(controleLeiteiro)
+            controleDao.upsert(controleLeiteiro)
         }
     }
 
@@ -339,7 +328,7 @@ class CodeChallangeViewModel(
     fun addBancoDadosProdDiaria(producaoDiariaList: List<ProducaoDiaria>?) {
         viewModelScope.launch(dispatcher) {
             producaoDiariaList?.forEach{producaoDiariaList ->
-                    producaoDao.insertProd(producaoDiariaList)
+                    producaoDao.upsert(producaoDiariaList)
 
             }
         }

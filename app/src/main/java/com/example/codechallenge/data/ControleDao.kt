@@ -5,15 +5,14 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import androidx.room.Upsert
 
 @Dao
 interface ControleDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertControle (controleLeiteiro: ControleLeiteiro)
+    @Upsert
+    fun upsert(controleLeiteiro: ControleLeiteiro)
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    fun update(controleLeiteiro: ControleLeiteiro)
     @Query("SELECT del FROM ControleLeiteiro")
     fun getDel():Int
     @Query("SELECT numAnimal,total FROM ControleLeiteiro ORDER BY total DESC LIMIT 10")

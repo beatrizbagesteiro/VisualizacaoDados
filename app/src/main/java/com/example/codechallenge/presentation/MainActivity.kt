@@ -45,12 +45,15 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.dadosPlanilhaControleLeiteiro.observe(this@MainActivity) { controleLeiteiroList ->
 
-
-
+            controleLeiteiroList.forEach {
+                viewModel.upsertControle(it)
+            }
         }
         viewModel.dadosPlanilhaProdDiaria.observe(this@MainActivity){ producaoDiariaList ->
 
-
+            producaoDiariaList.forEach {
+                viewModel.upsertProdDiaria(it)
+            }
 
         }
 
