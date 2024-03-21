@@ -5,7 +5,7 @@ Aplicativo desenvolvido em um code challange do curso DevSpace. Através da leit
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="/result/codeChallange_1.png" width="260">&emsp;<img src="/result/codeChallange_2.png" width="260">&emsp;<img src="/result/codeChallange_3.png" width="260">
+<img src="/drawable/result_1.png" width="260">&emsp;<img src="/drawable/result_2.png" width="260">&emsp;<img src="/drawable/result_3.png" width="260">
 
 ## Tecnologias
 * Kotlin
@@ -16,6 +16,9 @@ Aplicativo desenvolvido em um code challange do curso DevSpace. Através da leit
     - TextView
     - EditText
     - ImageButton
+    - CardView
+    - Gráficos
+    - CalendarView
 - Intent Explicita para abrir a segunda Activity
 - FindViewById para recuperar components de UI
 - Lista para as opções de jogadas do aplicativo
