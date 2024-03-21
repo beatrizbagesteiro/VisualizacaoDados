@@ -1,5 +1,5 @@
 # Visualização de dados 
-Aplicativo desenvolvido em um code challange do curso DevSpace. Através da leitura de uma tabela do excel, os dados são tranferidos para um banco de dados local e mostrados informações consideradas relevantes.
+Aplicativo desenvolvido em um code challange do curso DevSpace. Através da leitura de uma tabela do excel, os dados são tranferidos para um banco de dados local e é mostrado informações consideradas relevantes.
 
 
 
