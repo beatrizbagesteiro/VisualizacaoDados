@@ -5,7 +5,7 @@ Aplicativo desenvolvido em um code challange do curso DevSpace. Através da leit
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="result_1.png" width="260">&emsp;<img src="/drawable/result_2.png" width="260">&emsp;<img src="/drawable/result_3.png" width="260">
+<img src="result_2.png" width="260">&emsp;<img src="result_1.png" width="260">&emsp;<img src="/drawable/result_3.png" width="260">
 
 ## Tecnologias
 * Kotlin
