@@ -17,13 +17,15 @@ Aplicativo desenvolvido em um code challange do curso DevSpace. Através da leit
     - EditText
     - ImageButton
     - CardView
-    - Gráficos
+    - BarChart
     - CalendarView
 - Intent Explicita para abrir a segunda Activity
 - FindViewById para recuperar components de UI
 - Arquitetura MVVM
 - Room DataBase
-- Leitura de tabela do excel através de API
+- Google Sheets API
+- NetHttpTransport
+  
 
 ### TODO
 - Melhorar estilização do app
