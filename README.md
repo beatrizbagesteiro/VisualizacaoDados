@@ -21,9 +21,9 @@ Aplicativo desenvolvido em um code challange do curso DevSpace. Através da leit
     - CalendarView
 - Intent Explicita para abrir a segunda Activity
 - FindViewById para recuperar components de UI
-- Lista para as opções de jogadas do aplicativo
-- Randomização da Lista
-- String resource para concatenação de textos
+- Arquitetura MVVM
+- Room DataBase
+- Leitura de tabela do excel através de API
 
 ### TODO
 - Melhorar estilização do app
