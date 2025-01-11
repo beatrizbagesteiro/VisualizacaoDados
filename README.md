@@ -1,5 +1,5 @@
 # Visualização de dados 
-Aplicativo desenvolvido em um code challange do curso DevSpace. Através da leitura de uma tabela do excel, os dados são tranferidos para um banco de dados local e é mostrado informações consideradas relevantes.
+An application developed during a code challenge in the DevSpace course. By reading data from an Excel spreadsheet, the information is transferred to a local database, and relevant insights are displayed.
 
 
 
@@ -7,28 +7,28 @@ Aplicativo desenvolvido em um code challange do curso DevSpace. Através da leit
 <!-- You can add more screenshots here if you like -->
 <img src="result_2.png" width="260">&emsp;<img src="result_1.png" width="260">&emsp;<img src="result_3.png" width="260">
 
-## Tecnologias
+## Technology
 * Kotlin
 * Activity para host de telas
 * ViewGroup
     * Constraint Layout
-- Components de UI
+- UI Component
     - TextView
     - EditText
     - ImageButton
     - CardView
     - BarChart
     - CalendarView
-- Intent Explicita para abrir a segunda Activity
-- FindViewById para recuperar components de UI
-- Arquitetura MVVM
+- Explicit Intent to open the second Activity
+- FindViewById to retrieve UI components
+- MVVM Architecture
 - Room DataBase
 - Google Sheets API
 - NetHttpTransport
   
 
 ### TODO
-- Melhorar estilização do app
+- Improve app styling
 
 ## Author
 Beatriz P. B. Alves (follow me on [LinkedIn](https://www.linkedin.com/in/beatriz-alves-4871b3263/))
